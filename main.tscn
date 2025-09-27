@@ -1,0 +1,514 @@
+[gd_scene load_steps=43 format=3 uid="uid://snwkyisrvo01"]
+
+[ext_resource type="Script" uid="uid://bfis1vcara27w" path="res://sheep.gd" id="1_1bvp3"]
+[ext_resource type="Script" uid="uid://cds5446t7x21f" path="res://main.gd" id="1_272bh"]
+[ext_resource type="Texture2D" uid="uid://den0dx4lwmuax" path="res://sheep.png" id="1_ig7tw"]
+[ext_resource type="Texture2D" uid="uid://b27neql5uu4ob" path="res://kicker.png" id="2_0xm2m"]
+[ext_resource type="Texture2D" uid="uid://bpxaejphk1ld2" path="res://grass.png" id="2_5vw27"]
+[ext_resource type="Script" uid="uid://btcs7sj0so84l" path="res://farmer.gd" id="3_lquwl"]
+[ext_resource type="Texture2D" uid="uid://bjx74ip2nheqe" path="res://sheep_fall.png" id="4_7mycd"]
+[ext_resource type="Texture2D" uid="uid://b2ddhbwbs8ic4" path="res://hole.png" id="5_lquwl"]
+[ext_resource type="AudioStream" uid="uid://ct2wts6251uwb" path="res://sheep-3-89230.mp3" id="7_dg77c"]
+[ext_resource type="AudioStream" uid="uid://dmjhvxk7fhkke" path="res://sheep-122256.mp3" id="8_ycdy4"]
+[ext_resource type="AudioStream" uid="uid://bnbp6ytardhsg" path="res://sheep-352668.mp3" id="9_w48qg"]
+[ext_resource type="AudioStream" uid="uid://dvkrhjmaccool" path="res://small-sheep-352868.mp3" id="10_vivmo"]
+[ext_resource type="Script" uid="uid://cs0r03j0pqbjt" path="res://harpoon.gd" id="13_2cqfq"]
+[ext_resource type="Texture2D" uid="uid://drwxlqjrp5cmb" path="res://harpoon icon-1.png.png" id="13_ycdy4"]
+[ext_resource type="Texture2D" uid="uid://dcsuh7irlapa2" path="res://harpoon tip-1.png.png" id="14_yaehf"]
+[ext_resource type="Texture2D" uid="uid://bsrsfhua5dut1" path="res://harpoon chain-2.png.png" id="15_074og"]
+
+[sub_resource type="Animation" id="Animation_w48qg"]
+resource_name = "rise"
+length = 2.0
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:self_modulate:r")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:self_modulate:g")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:self_modulate:b")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D:self_modulate:a")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Sprite2D:position:x")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 2)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Sprite2D:position:y")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(21, -0.25, 0, 0.25, 0, -29, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 2)
+}
+tracks/6/type = "bezier"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Sprite2D:scale:x")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0.1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 2)
+}
+tracks/7/type = "bezier"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Sprite2D:scale:y")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0.1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 2)
+}
+
+[sub_resource type="Animation" id="Animation_vivmo"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:self_modulate:r")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:self_modulate:g")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:self_modulate:b")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D:self_modulate:a")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Sprite2D:position:x")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Sprite2D:position:y")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(21, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/6/type = "bezier"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Sprite2D:scale:x")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0.1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/7/type = "bezier"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Sprite2D:scale:y")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0.1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2cqfq"]
+_data = {
+&"RESET": SubResource("Animation_vivmo"),
+&"rise": SubResource("Animation_w48qg")
+}
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5vw27"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_lquwl")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_272bh"]
+radius = 23.0
+height = 110.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5vw27"]
+radius = 29.0
+height = 122.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kek77"]
+atlas = ExtResource("1_ig7tw")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4c57u"]
+atlas = ExtResource("1_ig7tw")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_efxa6"]
+atlas = ExtResource("4_7mycd")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dg77c"]
+atlas = ExtResource("4_7mycd")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ycdy4"]
+atlas = ExtResource("4_7mycd")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w48qg"]
+atlas = ExtResource("4_7mycd")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vivmo"]
+atlas = ExtResource("4_7mycd")
+region = Rect2(57, 32, 3, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0xm2m"]
+atlas = ExtResource("1_ig7tw")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h2yge"]
+atlas = ExtResource("1_ig7tw")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1bvp3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kek77")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4c57u")
+}],
+"loop": false,
+"name": &"caught",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_efxa6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dg77c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ycdy4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w48qg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vivmo")
+}],
+"loop": false,
+"name": &"fall",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0xm2m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h2yge")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 6.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1bvp3"]
+radius = 14.0
+height = 36.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lquwl"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_cegan"]
+radius = 13.0384
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lquwl"]
+atlas = ExtResource("2_0xm2m")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7mycd"]
+atlas = ExtResource("2_0xm2m")
+region = Rect2(64, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_272bh"]
+atlas = ExtResource("2_0xm2m")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5vw27"]
+atlas = ExtResource("2_0xm2m")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kek77"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lquwl")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7mycd")
+}],
+"loop": false,
+"name": &"kick",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_272bh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5vw27")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 6.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4c57u"]
+height = 52.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7mycd"]
+radius = 8.0
+height = 24.0
+
+[node name="Node2D" type="Node2D"]
+texture_filter = 1
+script = ExtResource("1_272bh")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_2cqfq")
+}
+
+[node name="Grass" type="Sprite2D" parent="."]
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_5vw27")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+ignore_time_scale = true
+
+[node name="hole" type="Area2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="hole"]
+sprite_frames = SubResource("SpriteFrames_5vw27")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hole"]
+position = Vector2(1, 2)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_272bh")
+debug_color = Color(0.94902, 0, 0.0352941, 0)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="hole"]
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hole/StaticBody2D"]
+position = Vector2(3, 2)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_5vw27")
+debug_color = Color(0.998382, 0, 0.14346, 0.42)
+
+[node name="sheep" type="StaticBody2D" parent="."]
+position = Vector2(-421, 4)
+script = ExtResource("1_1bvp3")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="sheep"]
+sprite_frames = SubResource("SpriteFrames_1bvp3")
+animation = &"walk"
+
+[node name="Area2D" type="Area2D" parent="sheep"]
+collision_layer = 11
+collision_mask = 11
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="sheep/Area2D"]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_1bvp3")
+debug_color = Color(0, 0.6, 0.701961, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="sheep"]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_lquwl")
+debug_color = Color(1, 1, 1, 0.462745)
+
+[node name="baa1" type="AudioStreamPlayer2D" parent="sheep"]
+stream = ExtResource("7_dg77c")
+
+[node name="baa2" type="AudioStreamPlayer2D" parent="sheep"]
+stream = ExtResource("8_ycdy4")
+volume_db = 4.952
+
+[node name="baa3" type="AudioStreamPlayer2D" parent="sheep"]
+stream = ExtResource("9_w48qg")
+
+[node name="baa4" type="AudioStreamPlayer2D" parent="sheep"]
+stream = ExtResource("10_vivmo")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(2, 2)
+
+[node name="harpoon" type="StaticBody2D" parent="."]
+position = Vector2(-137, 73)
+collision_layer = 8
+collision_mask = 8
+script = ExtResource("13_2cqfq")
+
+[node name="chain" type="Line2D" parent="harpoon"]
+texture_repeat = 2
+points = PackedVector2Array(0, 0, 0, 0)
+width = 32.0
+texture = ExtResource("15_074og")
+texture_mode = 1
+round_precision = 10
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="harpoon"]
+polygon = PackedVector2Array(0, -11, 9, 3, 9, 7, -9, 7, -9, 1)
+
+[node name="tip" type="Area2D" parent="harpoon"]
+
+[node name="sprite" type="Sprite2D" parent="harpoon/tip"]
+texture = ExtResource("14_yaehf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="harpoon/tip"]
+shape = SubResource("CircleShape2D_cegan")
+
+[node name="farmer" type="CharacterBody2D" parent="."]
+position = Vector2(-137, 73)
+collision_layer = 7
+collision_mask = 7
+script = ExtResource("3_lquwl")
+
+[node name="sprite" type="AnimatedSprite2D" parent="farmer"]
+sprite_frames = SubResource("SpriteFrames_kek77")
+animation = &"kick"
+autoplay = "walk"
+
+[node name="body" type="CollisionShape2D" parent="farmer"]
+shape = SubResource("CapsuleShape2D_4c57u")
+
+[node name="foot" type="Area2D" parent="farmer"]
+position = Vector2(22, 12)
+
+[node name="shoe" type="CollisionShape2D" parent="farmer/foot"]
+shape = SubResource("CapsuleShape2D_7mycd")
+disabled = true
+debug_color = Color(0.579074, 0.278324, 0.0489204, 0.42)
+
+[node name="Label" type="Label" parent="."]
+offset_left = -138.0
+offset_top = -152.0
+offset_right = 137.0
+offset_bottom = -129.0
+text = "THE HOLE REQUIRES # MORE SHEEP"
+horizontal_alignment = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+position = Vector2(0, 21)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("13_ycdy4")
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="pooned" from="sheep" to="harpoon" method="_on_sheep_pooned"]
+[connection signal="animation_finished" from="sheep/AnimatedSprite2D" to="sheep" method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="area_entered" from="sheep/Area2D" to="sheep" method="_on_area_2d_sheep_area_entered"]
+[connection signal="animation_finished" from="farmer/sprite" to="farmer" method="_on_sprite_animation_finished"]
+[connection signal="area_entered" from="farmer/foot" to="sheep" method="_on_area_2d_area_entered"]
